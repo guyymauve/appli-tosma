@@ -110,17 +110,22 @@ class App extends React.Component{
         cats.push(<Categorie cat={cat} mats={mats} onClick={(mat) => this.handleClick(mat)}/>);
       }
     }
+
+    let permanentDisabled = (this.state.popupMode || this.state.authMode || this.state.auth);
+
     return (
       <div className="App">
         <Update visible={this.state.auth} onClick={() => this.quitterUpdate()} cats={this.state.apiResponse.categories} mats={this.state.apiResponse.matos} refresh={() => this.init()}/>
         <Auth visible={this.state.authMode} onSubmit={(mdp) => this.auth(mdp)}/>
         <Popup visible={this.state.popupMode} onClick={() => this.quitterPopup()}/>
-        <Emprunt />
-        <button onClick={this.modifierMatos}>Modifier Matos</button>
-        <div className="categories">{cats}</div>
+        <div className="permanent" style={permanentDisabled ? {pointerEvents: "none"} : {pointerEvents: "auto"}}>
+          <Emprunt />
+          <button onClick={this.modifierMatos}>Modifier Matos</button>
+          <div className="categories">{cats}</div>
+        </div>
       </div>
     );
-    }
+  }
 }
 
 export default App;
