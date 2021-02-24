@@ -16,7 +16,7 @@ Dans cette version, les serveur est hébergé en local sur le port 8000 et le cl
 ## Utilisation
 ### Se noter sur le tosma
 Pour se noter sur le tosma, il faut rentrer un nom dans le champ en haut de la page, puis cliquer sur le matos à emprunter/rendre. Il faut obligatoirement un nom, même pour rendre le matos.
-## Modifier le matos
+### Modifier le matos
 Il faut cliquer sur le bouton "Modifier le matos" en haut de l'écran. Il faut ensuite rentrer le mot de passe pour accéder à l'interface admin (par défaut 2BDindes). Ensuite il faut utiliser l'un des 3 formulaires pour ajouter/modifier/supprimer du matos.
 
 ## A faire
