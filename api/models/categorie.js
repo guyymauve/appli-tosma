@@ -2,6 +2,11 @@ var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
 
+/* Représente une catégorie de Matos.
+    Nom : nom de la catégorie
+    Acronyme : acronyme de la catégorie en 2 lettres 
+*/
+
 var CategorieSchema = new Schema(
     {
         nom: {type: String, required: true, maxlength: 100},

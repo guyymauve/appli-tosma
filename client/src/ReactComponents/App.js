@@ -1,5 +1,4 @@
-import logo from './logo.svg';
-import './App.css';
+import '../App.css';
 import React from 'react';
 import Categorie from './Categorie';
 import Emprunt from './Emprunt';
@@ -7,6 +6,7 @@ import Popup from './Popup';
 import Auth from './Auth';
 import Update from './Update';
 
+//Composant principal de l'application
 class App extends React.Component{
   constructor(props) {
     super(props);
@@ -19,6 +19,7 @@ class App extends React.Component{
     this.modifierMatos = this.modifierMatos.bind(this);
   }
 
+  //Demande la liste du matos et des catégories au serveur
   init() {
     var myHeaders = new Headers();
     var myInit = {
@@ -31,7 +32,7 @@ class App extends React.Component{
     var myRequest = new Request("http://localhost:8000/init/", myInit);
     fetch(myRequest, myInit)
     .then(res => res.json())
-    .then(res => this.setState({apiResponse: res, popupMode: this.state.popupMode, auth: this.state.auth, authMode: this.state.authMode}))
+    .then(res => this.state.apiResponse = res)
     .then(res => this.forceUpdate())
     .then(res => console.log(this.state.apiResponse.matos));
   }

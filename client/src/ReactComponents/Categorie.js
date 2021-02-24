@@ -1,6 +1,6 @@
 import React from 'react';
 import Matos from './Matos';
-import './App.css';
+import '../App.css';
 
 
 class Categorie extends React.Component {
