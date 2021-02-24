@@ -36,3 +36,56 @@
     transform: rotate(360deg);
   }
 }
+
+.categories {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.categorie {
+  width: 300px;
+  margin-bottom: 20px;
+  border: 2px solid black;
+}
+
+.nomCat {
+  border : 1px solid black;
+}
+
+.matos {
+  border: 1px solid black;
+  display: flex;
+}
+
+.code {
+  width: 20%;
+  border-right: 1px solid black;
+}
+
+.emprunt {
+  width: 20%;
+  border-left: 1px solid black;
+}
+
+.popup {
+  position: fixed;
+  top: 25%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+  border: 1px solid black;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#pasDeNom {
+  font-size: 2em;
+}
+
+.popup > * {
+  flex-basis : 0;
+}

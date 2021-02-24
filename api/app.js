@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var async = require('async');
+var cors = require("cors");
 
 //Connection à la BDD MongoDB
 var mongoose = require('mongoose');
@@ -62,6 +63,8 @@ for (elt of liste_matos) {
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var initRouter = require('./routes/init');
+var updateRouter = require('./routes/update');
+var authRouter = require('./routes/auth');
 
 var app = express();
 
@@ -74,10 +77,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/init', initRouter);
+app.use('/update', updateRouter);
+app.use('/auth', authRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

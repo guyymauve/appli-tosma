@@ -3,6 +3,8 @@ var categorie = require('./categorie');
 
 var Schema = mongoose.Schema;
 
+const opts = { toJSON : {virtuals: true} };
+
 var MatosSchema = new Schema(
     {
         nom: {type: String, required: true, maxlength: 100},
@@ -10,13 +12,13 @@ var MatosSchema = new Schema(
         id: {type: Number},
         dispo: {type: Boolean, required: true},
         emprunt: {type: String, maxlength: 100}
-    }
+    }, opts
 );
 
 MatosSchema
 .virtual('code')
 .get(function() {
-    return this.categorie.acronym + new Intl.NumberFormat(options={minimumIntegerDigits: 3}).format(this.id);
+    return this.categorie.acronyme + new Intl.NumberFormat(options={minimumIntegerDigits: 3}).format(this.id);
 });
 
 module.exports = mongoose.model('Matos', MatosSchema);
